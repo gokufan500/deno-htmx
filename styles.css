@@ -1,0 +1,135 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', monospace;
+            background: white;
+            color: black;
+            line-height: 1.5;
+        }
+        
+        /* Two-column flexbox layout */
+        .two-columns {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        /* Left column */
+        .left-column {
+            flex: 1;
+            border-right: 1px solid black;
+            padding-right: 2rem;
+        }
+        
+        /* Right column */
+        .right-column {
+            flex: 1;
+        }
+        
+        /* Typography - just black and simple */
+        h1 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid black;
+        }
+        
+        h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Simple button - just black border */
+        button {
+            background: black;
+            color: white;
+            border: 1px solid black;
+            padding: 8px 16px;
+            font-size: 1rem;
+            font-family: monospace;
+            cursor: pointer;
+            margin: 1rem 0;
+        }
+        
+        button:hover {
+            background: white;
+            color: black;
+        }
+        
+        button:active {
+            transform: scale(0.98);
+        }
+        
+        /* User list styling - very minimal */
+        #user-list {
+            margin-top: 1rem;
+        }
+        
+        #user-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #user-list li {
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #user-list button {
+            background: black;
+            padding: 4px 12px;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+        
+        /* Right column content */
+        .right-column p, .right-column ul {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .right-column ul {
+            margin-left: 1.5rem;
+        }
+        
+        .right-column li {
+            margin: 0.5rem 0;
+        }
+        
+        /* Simple horizontal rule */
+        hr {
+            border: none;
+            border-top: 1px solid black;
+            margin: 1rem 0;
+        }
+        
+        /* Responsive: stack on mobile */
+        @media (max-width: 768px) {
+            .two-columns {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .left-column {
+                border-right: none;
+                border-bottom: 1px solid black;
+                padding-right: 0;
+                padding-bottom: 1rem;
+            }
+        }

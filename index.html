@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deno + HTMX App</title>
+    
+    <!-- HTMX: This script enables HTMX functionality -->
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="two-columns">
+        <!-- Left Column -->
+        <div class="left-column">
+           <!-- 
+            <button 
+                hx-get="/api/users" 
+                hx-target="#user-list" 
+                hx-swap="innerHTML">
+                Load Users
+            </button>
+            
+            <div id="user-list">
+                <p>No users loaded. Click above.</p>
+            </div>
+            -->
+            <h2>Notes</h2>
+            <button
+              hx-get="/api/notes"
+              hx-trigger="load"
+              hx-target="#notes-list">
+                get files on load and when clicked
+            </button>
+            <div id="notes-list"> loading.. </div> 
+            <h2>
+                 render notes 
+            </h2>
+            <div id="note-container">
+            
+            </div>
+            
+        </div>
+        
+        <!-- Right Column -->
+        <div class="right-column">
+          <p>
+            Page starts with deno.serve, which hosts at port and runs function router;<br><br>
+            <i>Deno.serve({port: PORT}, router);</i> <br><br>
+            router gets url from req: Request, then matches url to function. by default loads home function. HTMX requests are urls, which are then matched and returned.
+          </p>
+          <p>
+          difference in htmx ajax requests. get is different from rest, saved in url and cached by browser. rest are similar but have semantic differences 
+          <br><br>
+          htmx does the same thing for all, issuing a request to server and then expecting return that it then replaces document element with returned html.
+          <ul>
+          <li>GET  gets user </li>
+          <li>POST create new user</li>
+          <li>PUT replace user entirely</li>
+          <li>PATCH replace user partially</li>
+          <li>DELETE delete user </li>
+          </ul>
+          </p>
+        </div>
+    </div>
+</body>
+</html>
